@@ -1,0 +1,61 @@
+---
+
+---
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+  </head>
+  <body class="page">
+    <h1>Bienvenido a la página de inicio</h1>
+  </body>
+</html>
+
+<style>
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 75%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 20% 25% at 50% 100%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.9) 8%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0.15) 40%,
+      transparent 70%
+    );
+
+  filter: blur(12px);
+}
+.page::before {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 35%;
+  height: 45%;
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 15%,
+    rgba(255, 255, 255, 0.3) 35%,
+    transparent 70%
+  );
+
+  filter: blur(25px);
+}
+</style>
