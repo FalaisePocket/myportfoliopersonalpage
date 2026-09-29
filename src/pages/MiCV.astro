@@ -1,19 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Carousel from '../layouts/Carousel.astro';
+
+//Frameworks logo imports
+import astroLogo from '../assets/cv/Astro.svg';
+import reactLogo from '../assets/cv/React-icon.svg';
+import viteLogo from '../assets/cv/Vite.js.svg';
+import nextLogo from '../assets/cv/Next.js.svg';
+import bootstrapLogo from '../assets/cv/Bootstrap.svg';
+import djangoLogo from '../assets/cv/Django.svg';
+import flaskLogo from '../assets/cv/Flask.svg';
+import DRFLogo from '../assets/cv/DjangoREST.svg';
+import expressLogo from '../assets/cv/Express.svg';
+import androidLogo from '../assets/cv/AndroidStudio.svg';
+import nodejsLogo from '../assets/cv/Node.js.svg';
+//Programming languages logo imports
+import javascriptLogo from '../assets/cv/JavaScript.svg';
+import pythonLogo from '../assets/cv/Python.svg';
+import typescriptLogo from '../assets/cv/TypeScript.svg';
+import csharpLogo from '../assets/cv/CSharp.svg';
+import cLogo from '../assets/cv/C++.svg';
+//Database logo imports
+import postgresqlLogo from '../assets/cv/PostgreSQL.svg';
+//importing tools logo imports
+import dockerLogo from '../assets/cv/Docker.svg';
+import postmanLogo from '../assets/cv/Postman.svg';
+
+
 ---
 
 <Layout>
-  <div>
+  <div class="main-section">
+  <div class="title">
     <h1>Mi hoja de vida</h1>
   </div>
   
-  <h2>Perfil Profesional</h2>
-  <p> Soy un ingeniero de sistemas enfocado en el desarrollo Full Stack, </p>
-  
-  
-  <div>
-    <h2>Educación y certificaciones</h2>
+  <div class="section-left">
+    
+    <div class="text-container">
+      <h2>Perfil Profesional</h2>
+      <p> 
+        Soy un ingeniero de sistemas enfocado en el desarrollo Full Stack, 
+      </p>
+    </div>
 
+    <p>placeholder images</p>
+  </div>
+
+
+  <div class="section-left">
+    
+    <div class="text-container">
+    <h2>Educación y certificaciones</h2>
     <h3>Ingeniería de Sistemas</h3>
     <p>En</p>
     <p>Universidad del Valle</p>
@@ -24,45 +62,161 @@ import Layout from '../layouts/Layout.astro';
     <p>En</p>
     <p>Google Skills</p>
     <p>2024</p>
+    </div>
   </div>
 
-  <h2>Habilidades blandas</h2>
-  <h2>Tecnologías</h2>
-  <h3>Frameworks</h3>
-  <p>React</p>
-  <p>Vite.js</p>
-  <p>Astro</p>
-  <p>Next.js</p>
-  <p>Bootstrap</p>
-  <p>Node.js</p>
-  <p>Django</p>
-  <p>Django REST Framework</p>
-  <p>Express.js</p>
-  <p>Android SDK</p>
-  <p>Flask</p>
-  <h3>Lenguajes de programación</h3>
-  <p>JavaScript</p>
-  <p>Python</p>
-  <p>TypeScript</p>
-  <p>C#</p>
-  <p>C/C++</p>
-  <h3>Bases de datos</h3>
-  <p>PostgreSQL</p>
-  <h3>Herramientas</h3>
-  <p>Docker</p>
-  <p>Postman</p>
-  <p></p>
-  <p></p>
+  <div class="section-left">
+    <div>
+      <h2>Habilidades blandas</h2>
+      <p>Trabajo en equipo</p>
+      <p>Comunicación efectiva</p>
+      <p>Resolución de problemas</p>
+      <p>Adaptabilidad</p>
+      <p>Gestión del tiempo</p>
+    </div>
+    <p>placeholder</p>
+  </div>
 
-  <h3>Librerías</h3>
-  <p>Pandas</p>
-  <p>Tkinter</p>
-  <p>Numpy</p>
-  <p>Matplotlib</p>
-  <p>Tensorflow</p>
-  <p>Scikit-learn</p>
-  <p>pytorch</p>
+  
+
+
+
+  
+    <h2>Tecnologías</h2>
+    <div class="section-left">
+
+      
+      <Carousel radius={200} size={500} itemSize={60} duration={8}>
+        <img src={astroLogo.src} alt="astroLogo" />
+        <img src={reactLogo.src} alt="reactLogo" />
+        <img src={viteLogo.src} alt="viteLogo" />
+        <img src={nextLogo.src} alt="nextLogo" />
+        <img src={bootstrapLogo.src} alt="bootstrapLogo" />
+        <img src={djangoLogo.src} alt="djangoLogo" />
+        <img src={flaskLogo.src} alt="flaskLogo" />
+        <img src={DRFLogo.src} alt="DRFLogo" />
+        <img src={nodejsLogo.src} alt="nodejsLogo" />
+        <img src={expressLogo.src} alt="expressLogo" />
+        <img src={androidLogo.src} alt="androidLogo" />
+      </Carousel>
+      
+    <div class="text-container">
+      <h3>Frameworks</h3>
+      <p>React</p>
+      <p>Vite.js</p>
+      <p>Astro</p>
+      <p>Next.js</p>
+      <p>Bootstrap</p>
+      <p>Node.js</p>
+      <p>Django</p>
+      <p>Django REST Framework</p>
+      <p>Express.js</p>
+      <p>Android SDK</p>
+      <p>Flask</p>
+      </div>
+    </div>
+
+
+    <div class="section-left">
+      
+      <div class="text-container">
+        <h3>Lenguajes de programación</h3>
+        <p>JavaScript</p>
+        <p>Python</p>
+        <p>TypeScript</p>
+        <p>C#</p>
+        <p>C/C++</p>
+      </div>
+      <Carousel radius={200} size={500} itemSize={60} duration={8}>
+        <img src={javascriptLogo.src} alt="javascriptLogo" />
+        <img src={pythonLogo.src} alt="pythonLogo" />
+        <img src={typescriptLogo.src} alt="typescriptLogo" />
+        <img src={csharpLogo.src} alt="csharpLogo" />
+        <img src={cLogo.src} alt="cLogo" />
+      </Carousel>
+    </div>
+
+
+    <div class="section-right">
+      <p>placehlder</p>
+      <div class="text-container">
+        <h3>Bases de datos</h3>
+        <p>PostgreSQL</p>
+      </div>
+    </div>
+    
+    <div class="section-left">
+      <div class="text-container">
+        <h3>Herramientas</h3>
+        <p>Docker</p>
+        <p>Postman</p>
+        <p>Power BI</p>
+        <p>Git</p>
+        <p>GitHub</p>
+      </div>
+      <Carousel radius={200} size={500} itemSize={60} duration={8}>
+        <img src={dockerLogo.src} alt="dockerLogo" />
+        <img src={postgresqlLogo.src} alt="postgresqlLogo" />
+        <img src={postmanLogo.src} alt="postmanLogo" />
+        
+      </Carousel>
+    </div>
+    
+    <div class="section-right">
+      <Carousel radius={200} size={500} itemSize={60} duration={8}>
+        <img src={nodejsLogo.src} alt="nodejsLogo"/>
+        <img src={nodejsLogo.src} alt="nodejsLogo"/>
+        <img src={nodejsLogo.src} alt="nodejsLogo"/>
+        <img src={nodejsLogo.src} alt="nodejsLogo"/>
+      </Carousel>
+      <div class="text-container">
+        <h3>Librerías</h3>
+        <p>Pandas</p>
+        <p>Tkinter</p>
+        <p>Numpy</p>
+        <p>Matplotlib</p>
+
+      </div>
+    </div>
+
+    
   
   
   
+</div>  
 </Layout>
+
+
+<style>
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container{
+    flex-direction: column;
+  }
+  .section-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10%;
+    padding: 0;
+  }
+  .section-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10%;
+    padding: 0;
+  }
+  p {
+    text-align: justify;
+  }
+  .main-section {
+    margin: 10%;
+  }
+
+  
+
+</style>

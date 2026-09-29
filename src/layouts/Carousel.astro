@@ -1,0 +1,93 @@
+---
+// src/components/OrbitLayout.astro
+export interface Props {
+  radius?: number;    // px
+  size?: number;      // tamaño del wrapper (500px en tu ejemplo)
+  itemSize?: number;  // tamaño de cada logo (60px en tu ejemplo)
+  duration?: number;  // segundos, mismo valor para orbit y counter-orbit
+}
+const { radius = 200, size = 500, itemSize = 60, duration = 8 } = Astro.props;
+---
+
+<div
+  class="orbit"
+  style={`--radius: ${radius}px; --size: ${size}px; --item-size: ${itemSize}px; --duration: ${duration}s;`}
+>
+  <div class="orbit-items">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .orbit {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    margin: 0 auto;
+  }
+
+  /* Este es el contenedor que gira (equivalente a tu .orbit con la animación) */
+  .orbit-items {
+    position: absolute;
+    inset: 0;
+    animation: orbit var(--duration) ease-in-out infinite alternate;
+  }
+
+  /* Wrapper que crea el JS para cada elemento */
+  .orbit-items :global(.orbit-item) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--item-size);
+    height: var(--item-size);
+    /* transform de posición (rotate + translateX) se setea inline vía JS */
+  }
+
+  /* Cualquier imagen dentro de un item hace la contra-rotación */
+  .orbit-items :global(.orbit-item img) {
+    width: var(--item-size);
+    height: var(--item-size);
+    display: block;
+    animation: counter-orbit var(--duration) ease-in-out infinite alternate;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes counter-orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.orbit').forEach((orbit) => {
+    const container = orbit.querySelector<HTMLElement>('.orbit-items');
+    if (!container) return;
+
+    const radiusStr = getComputedStyle(orbit).getPropertyValue('--radius').trim();
+    const radius = parseFloat(radiusStr); // asumimos px
+
+    const children = Array.from(container.children) as HTMLElement[];
+    const total = children.length;
+    if (total === 0) return;
+
+    children.forEach((child, i) => {
+      const angleDeg = (360 / total) * i;
+      const angleRad = (angleDeg * Math.PI) / 180;
+
+      const x = radius * Math.cos(angleRad);
+      const y = radius * Math.sin(angleRad);
+
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('orbit-item');
+      // Sin rotate() acá: solo traslación, así el wrapper nunca queda inclinado
+      wrapper.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+
+      child.replaceWith(wrapper);
+      wrapper.appendChild(child);
+    });
+  });
+</script>

@@ -1,8 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Carousel from '../layouts/Carousel.astro';
+import astroLogo from '../assets/cv/Astro.svg';
+import reactLogo from '../assets/cv/React-icon.svg';
+import viteLogo from '../assets/cv/Vite.js.svg';
+import nextLogo from '../assets/cv/Next.js.svg';
+import bootstrapLogo from '../assets/cv/Bootstrap.svg';
+import djangoLogo from '../assets/cv/Django.svg';
+import flaskLogo from '../assets/cv/Flask.svg';
+import DRFLogo from '../assets/cv/DjangoREST.svg';
+import nodeLogo from '../assets/cv/Node.js.svg';
+import expressLogo from '../assets/cv/Express.svg';
+import androidLogo from '../assets/cv/AndroidStudio.svg';
 ---
 <Layout>
-    <div class="glow"></div>
-    <p>Hola Mundo!!!</p>
+  <div class="glow"></div>
+  <p>Hola Mundo!!!</p>
+
+
+  <Carousel radius={200} size={500} itemSize={60} duration={8}>
+    <img src={astroLogo.src} alt="astroLogo" />
+    <img src={reactLogo.src} alt="reactLogo" />
+    <img src={viteLogo.src} alt="viteLogo" />
+    <img src={nextLogo.src} alt="nextLogo" />
+    <img src={bootstrapLogo.src} alt="bootstrapLogo" />
+    <img src={djangoLogo.src} alt="djangoLogo" />
+    <img src={flaskLogo.src} alt="flaskLogo" />
+    <img src={DRFLogo.src} alt="DRFLogo" />
+    <img src={nodeLogo.src} alt="nodeLogo" />
+    <img src={expressLogo.src} alt="expressLogo" />
+    <img src={androidLogo.src} alt="androidLogo" />
+  </Carousel>
+
+
 </Layout>
 
