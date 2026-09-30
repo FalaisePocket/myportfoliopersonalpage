@@ -12,10 +12,11 @@ import DRFLogo from '../assets/cv/DjangoREST.svg';
 import nodeLogo from '../assets/cv/Node.js.svg';
 import expressLogo from '../assets/cv/Express.svg';
 import androidLogo from '../assets/cv/AndroidStudio.svg';
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 <Layout>
   <div class="glow"></div>
-  <p>Hola Mundo!!!</p>
+  <p class="pixel-font">Hola Mundo!!!</p>
 
 
   <Carousel radius={200} size={500} itemSize={60} duration={8}>
@@ -30,8 +31,7 @@ import androidLogo from '../assets/cv/AndroidStudio.svg';
     <img src={nodeLogo.src} alt="nodeLogo" />
     <img src={expressLogo.src} alt="expressLogo" />
     <img src={androidLogo.src} alt="androidLogo" />
-  </Carousel>
+    </Carousel>
 
-
+    <ProjectCard title="waaaaaaaa" description="wiiiii" image={nodeLogo.src} />
 </Layout>
-
