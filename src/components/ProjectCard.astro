@@ -2,13 +2,15 @@
 const { title, description, image, url } = Astro.props;
 ---
 
-<a href={url}>
+
 <div class="card">
+    <a href={url}>
     <img src={image} alt={title} />
     <h1>{title}</h1>
     <p>{description}</p>
+    </a>
 </div>
-</a>
+
 
 <style>
     @font-face {
@@ -19,7 +21,7 @@ const { title, description, image, url } = Astro.props;
       font-display: swap;
     }
     .card {
-        width: 300px;
+        width: fit-content;
         padding: 20px;
 
         background: black;
@@ -38,11 +40,14 @@ const { title, description, image, url } = Astro.props;
 
     .card h1 {
         font-family: "MiFuente", sans-serif;
+        font-size: 1.2rem;
         margin-top: 0;
+        color: rgba(255, 255, 0, 1);
     }
 
     .card p {
         font-family: "MiFuente", sans-serif;
+        font-size: 0.9rem;
         color: #555;
     }
 

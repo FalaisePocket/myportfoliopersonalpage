@@ -2,23 +2,113 @@
 import Layout from '../../layouts/Layout.astro';
 import ProjectCard from '../../components/ProjectCard.astro'
 import NodeLogo from '../../assets/cv/Node.js.svg'
+
+const featuredProjects = [
+  {
+    title: "Sistema de atención integral",
+    description: "Una aplicación web y móvil desarrollada para el área de atención integral de violencias basadas en género de la Universidad del Valle.",
+    image: NodeLogo.src,
+    url: "/proyectos/appVBG"
+  },
+  {
+    title: "Pipeline ETL",
+    description: "Un pipeline de extracción, transformación y carga de datos desarrollado para automatizar el procesamiento de grandes volúmenes de información.",
+    image: NodeLogo.src,
+    url: "/proyectos/pipelineETL"
+  },
+  {
+    title: "Videojuego de tanques",
+    description: "Un videojuego de tanques desarrollado como proyecto final del curso de desarrollo de videojuegos, utilizando Unity y C#.",
+    image: NodeLogo.src,
+    url: "/proyectos/tankGame"
+  },
+  {
+    title: "Aplicación de procesamiento de imagenes",
+    description: "Una aplicación de procesamiento de imágenes desarrollada para aplicar distintas tecnicas de procesamiento de imagenes, utilizando imagenes médicas.",
+    image: NodeLogo.src,
+    url: "/proyectos/procImg"
+  }
+]
+
+const comingSoonProjects =[
+  {
+    title: "DailyTask",
+    description: "Una aplicación de gestión de tareas desarrollada para ayudar a los usuarios a organizar y realizar un seguimiento de sus actividades diarias.",
+    image: NodeLogo.src,
+    url: "/proyectos/dask"
+  },
+  {
+    title: "VoIP app",
+    description: "Una aplicación de comunicación por voz sobre IP, desarrollada para permitir llamadas de voz y mensajería de texto a través de internet.",
+    image: NodeLogo.src,
+    url: "/proyectos/voipApp"
+  },
+  {
+    title: "Video Editor",
+    description: "Un editor de video desarrollado para permitir la edición y manipulación de archivos de video, con diversas herramientas y efectos.",
+    image: NodeLogo.src,
+    url: "/proyectos/videoEditor"
+  }
+]
+
 ---
 
 
 <Layout>
-  <ProjectCard title="Holaaa" description="Mundo!!"  image={NodeLogo.src} url="/proyectos/aveer"/>
+  <div class="main-box">
   <h1>Bienvenido a la pagina de proyectos</h1>
-  <h2>Proyectos destacados</h2>
-  <p>--------------------------------------------------</p>
-  <h3>Sistema de atención integral</h3>
-  <h3>pipeline ETL</h3>
-  <h3>Videojuego de tanques</h3>
   
-  <p>--------------------------------------------------</p>
-  <h2>Proximamente</h2>
-  <h3>DASK</h3>
-  <h3>VoIP app</h3>
-  <h3>Video Editor</h3>
-  <p>--------------------------------------------------</p>
+  <div>
+    <h2>Proyectos destacados</h2>
+    <div class="grid">
+      {featuredProjects.map(project => (
+        <ProjectCard 
+          title={project.title} 
+          description={project.description}  
+          image={project.image} 
+          url={project.url}
+        />
+      ))}
+    </div>
+  </div>
+  
+  <div>
+    <h2>Proximamente</h2>
+    <div class="grid2">
+      {comingSoonProjects.map(project => (
+        <ProjectCard 
+          title={project.title} 
+          description={project.description}  
+          image={project.image} 
+          url={project.url}
+        />
+      ))}
+    </div>
+  </div>
+  
 
+</div>
 </Layout>
+
+<style>
+  .main-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 300px;
+    padding-top: 50px;
+    
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .grid2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+</style>
