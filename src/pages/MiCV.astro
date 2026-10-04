@@ -40,11 +40,21 @@ import postmanLogo from '../assets/cv/Postman.svg';
     <div class="text-container">
       <h2>Perfil Profesional</h2>
       <p> 
-        Soy un ingeniero de sistemas enfocado en el desarrollo Full Stack, 
+        Estudiante de Ingeniería de Sistemas de último semestre con experiencia académica desarrollando aplicaciones Full Stack, procesamiento de datos y soluciones de software utilizando React, Django, Python y PostgreSQL. Me interesa desarrollarme como desarrollador de software, aportando capacidad analítica, aprendizaje rápido y resolución de problemas.
       </p>
     </div>
 
     <p>placeholder images</p>
+  </div>
+
+
+  <div>
+    <h2>Proyectos Destacados</h2>
+    <div >
+      <button onclick="window.location.href='/proyectos'">
+        <p>Haz click aquí para ver todos los proyectos que he contrubuido y he realizado</p>
+      </button>
+    </div>
   </div>
 
 
@@ -73,9 +83,17 @@ import postmanLogo from '../assets/cv/Postman.svg';
       <p>Resolución de problemas</p>
       <p>Adaptabilidad</p>
       <p>Gestión del tiempo</p>
+      <p></p>
+      <p></p>
+      <h2>Idiomas</h2>
+      <h3>Español</h3>
+      <p>Nativo</p>
+      <h3>Inglés</h3>
+      <p>B2+ (Intermedio)</p>
     </div>
     <p>placeholder</p>
   </div>
+
 
   
 
@@ -188,6 +206,28 @@ import postmanLogo from '../assets/cv/Postman.svg';
 
 
 <style>
+  @font-face {
+      font-family: "Montserrat";
+      src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") 
+      format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+  h1,h2,h3{
+    font-family:  "Montserrat", sans-serif;
+    color: #5db5fd;
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+
+  p{
+    font-family: "Texto normal", Calibri, sans-serif;
+    font-size: 1.75rem;
+
+  }
+
   .title {
     display: flex;
     justify-content: center;
@@ -214,9 +254,16 @@ import postmanLogo from '../assets/cv/Postman.svg';
     text-align: justify;
   }
   .main-section {
-    margin: 10%;
+    padding: 30px 200px;
   }
 
-  
+  button{
+    background-color: black;
+    color: white;
+    border: 2px solid #5db5fd;
+    padding: 30px 36px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
 </style>
