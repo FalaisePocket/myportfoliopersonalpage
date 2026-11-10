@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+import architectures from '../../assets/projects/architecture.jpeg';
 ---
 <Layout>
 <div class="main">
@@ -69,9 +71,50 @@ import Layout from '../../layouts/Layout.astro';
         
             <h4>Supabase</h4>
         </div>
+
         
     </ul>
 
+    <div>
+        <h2>Arquitectura</h2>
+        <img src={architectures.src} alt="Arquitectura App VBG" />
+    </div>
+
+    <h2>Repositorio</h2>
+    <p>El repositorio de este proyecto se encuentra en GitHub, puedes acceder a él haciendo click  en los siguientes enlaces:</p>
+    
+    <h3>Repositorio aplicación web</h3>
+    
+    <a
+        class="github-button"
+        href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Frontend"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <p>Haz clic aquí para ver el repositorio de la aplicación web.</p>
+    </a>
+
+    <h3>Repositorio aplicación móvil</h3>
+
+    <a
+        class="github-button"
+        href="https://github.com/AlejandroMarroquin18/AppMovilGestionVBG"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <p>Haz clic aquí para ver el repositorio de la aplicación móvil.</p>
+    </a>
+
+    <h3>Repositorio Back End</h3>
+
+    <a
+        class="github-button"
+        href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Backend"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <p>Haz clic aquí para ver el repositorio del Back End.</p>
+    </a>
 
 </div>
 
@@ -79,6 +122,30 @@ import Layout from '../../layouts/Layout.astro';
 
 <style>
 .main{
-    padding: 4rem;
+    padding: 10rem;
 }
+
+.main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.github-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    border: 2px solid #5db5fd;
+    padding: 30px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.github-button:hover {
+    background-color: #5db5fd;
+    color: black;
+}
+p{
+    text-decoration: none;
+}
+
 </style>

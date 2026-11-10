@@ -1,0 +1,46 @@
+<a class="project-link" href="/proyectos">
+    Haz click aquí para ver todos los proyectos que he contribuido y he realizado
+</a>
+
+<style>
+.project-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 30px;
+    border: 2px solid #4db8ff;
+    border-radius: 8px;
+
+    color: white;
+    text-decoration: none;
+    background: transparent;
+
+    overflow: hidden;
+    z-index: 1;
+
+    transition: color 0.4s ease;
+}
+
+/* Fondo animado */
+.project-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s ease;
+
+    z-index: -1;
+}
+
+/* Animación al pasar el cursor */
+.project-link:hover::before {
+    transform: scaleX(1);
+}
+</style>
