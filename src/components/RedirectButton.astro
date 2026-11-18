@@ -1,9 +1,21 @@
-<a class="project-link" href="/proyectos">
-    Haz click aquí para ver todos los proyectos que he contribuido y he realizado
+---
+interface Props {
+  href: string;
+
+}
+const { href } = Astro.props;
+---
+
+<a 
+    class="box-main"
+    target="_blank"
+    rel="noopener noreferrer"
+    href={href}>
+    <slot />    
 </a>
 
 <style>
-.project-link {
+.box-main {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,7 +36,7 @@
 }
 
 /* Fondo animado */
-.project-link::before {
+.box-main::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -40,7 +52,7 @@
 }
 
 /* Animación al pasar el cursor */
-.project-link:hover::before {
+.box-main:hover::before {
     transform: scaleX(1);
 }
 </style>
