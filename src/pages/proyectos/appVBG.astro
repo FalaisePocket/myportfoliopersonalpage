@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 
 import architectures from '../../assets/projects/architecture.jpeg';
+import RedirectButton from '../../components/RedirectButton.astro';
 ---
 <Layout>
 <div class="main">
@@ -13,7 +14,17 @@ import architectures from '../../assets/projects/architecture.jpeg';
         acceder a recursos de apoyo y recibir orientación en tiempo real.
     </p>
     <h2>¿Como Contribuí A Este Proyecto?</h2>
-    <p></p>
+    <ul>
+        <li><p>Elaboré el BPMN del negocio para entender sus procesos, necesidads y oportunidades de mejora</p></li>
+        <li><p>Levanté requerimientos de usuarios en conjunto con el área</p></li>
+        <li><p>Diseñé las interfaces de usuario de la aplicación web y móvil</p></li>
+        <li><p>Desarrollé la aplicación web utilizando React, Android SDK para la aplicación móvil, Django para la aplicación Back End</p></li>
+        <li><p>Diseñé la base de datos</p></li>
+        <li><p>Diseñé la arquitectura del sistema</p></li>
+        <li><p>Implementé el inicio de sesión de Google utilizando Google Cloud</p></li>
+        <li><p>Implementé sincronización con Google Calendar utilizando Google Cloud</p></li>
+        <li><p>Contribuí en el despligue de la aplicación para las pruebas de usuario</p></li>        
+    </ul>
     <h2>Features</h2>
     <ul>
         <p>
@@ -83,38 +94,23 @@ import architectures from '../../assets/projects/architecture.jpeg';
     <h2>Repositorio</h2>
     <p>El repositorio de este proyecto se encuentra en GitHub, puedes acceder a él haciendo click  en los siguientes enlaces:</p>
     
-    <h3>Repositorio aplicación web</h3>
-    
-    <a
-        class="github-button"
-        href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Frontend"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <p>Haz clic aquí para ver el repositorio de la aplicación web.</p>
-    </a>
+    <h3>Repositorio de la aplicación web</h3>
+
+    <RedirectButton href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Frontend" >
+    <p>Haz clic aquí para ver el repositorio de la aplicación web.</p>
+    </RedirectButton>
 
     <h3>Repositorio aplicación móvil</h3>
 
-    <a
-        class="github-button"
-        href="https://github.com/AlejandroMarroquin18/AppMovilGestionVBG"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <p>Haz clic aquí para ver el repositorio de la aplicación móvil.</p>
-    </a>
+    <RedirectButton href="https://github.com/AlejandroMarroquin18/AppMovilGestionVBG">
+        <p>Haz clic aquí para ver el repositorio de la aplicación móvil.</p>    
+    </RedirectButton>
 
     <h3>Repositorio Back End</h3>
-
-    <a
-        class="github-button"
-        href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Backend"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
+    
+    <RedirectButton href="https://github.com/AlejandroMarroquin18/AppGestionCasosVBG-Backend">
         <p>Haz clic aquí para ver el repositorio del Back End.</p>
-    </a>
+    </RedirectButton>
 
 </div>
 

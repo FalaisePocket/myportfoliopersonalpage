@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 
-
+import RedirectButton from '../components/RedirectButton.astro';
 ---
 
 <Layout>
@@ -30,10 +30,19 @@ import Navbar from '../components/Navbar.astro';
     <p>Esta página fue hecha utilizando el framework de Astro y el despliegue utilizando agentes de IA en Vercel.
     </p>
   </div>
+  <div class="section-bottom">
+    <p>Esta página fue creada utilizando el framework Astro, puedes encontrar el repositorio de esta página haciendo click en el botón de abajo</p>
+    <RedirectButton href="https://github.com/FalaisePocket/myportfoliopersonalpage">
+    <p>Repositorio de la página</p>
+    </RedirectButton>
+  </div>
 </Layout>
 
 <style>
 .page{
+  padding: 4rem;
+}
+.section-bottom{
   padding: 4rem;
 }
 </style>
